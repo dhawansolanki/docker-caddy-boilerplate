@@ -1,0 +1,8 @@
+example.com {
+	log {
+		output file /var/log/access.log
+	}
+	handle {
+		reverse_proxy app:3000
+	}
+}

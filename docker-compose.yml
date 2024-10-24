@@ -1,13 +1,31 @@
 version: '3.8'
 
 services:
+  caddy:
+    depends_on:
+      - app
+    build:
+      dockerfile: Dockerfile
+      context: "./caddyServer"
+    ports:
+      - 80:80
+      - 443:443
+      - 3000:3000
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+  
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
+    
     volumes:
       - .:/app
     environment:
       - NODE_ENV=development
+
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
