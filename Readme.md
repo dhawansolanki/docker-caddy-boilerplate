@@ -29,8 +29,8 @@ Make sure you have Docker and Docker Compose installed on your machine.
 **Clone the Repository**
 
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/dhawansolanki/docker-caddy-boilerplate.git
+   cd https://github.com/dhawansolanki/docker-caddy-boilerplate.git
    ```
 **Create Docker Volumes**
 
